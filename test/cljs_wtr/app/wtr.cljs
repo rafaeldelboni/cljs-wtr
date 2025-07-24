@@ -1,4 +1,5 @@
 (ns cljs-wtr.app.wtr
+  "https://modern-web.dev/docs/test-runner/test-frameworks/write-your-own/"
   (:require
    ["@web/test-runner-core/browser/session.js" :refer [sessionFailed
                                                        sessionFinished
