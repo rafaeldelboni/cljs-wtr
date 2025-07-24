@@ -1,0 +1,22 @@
+{
+  "name": "cljs-wtr",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "watch": "shadow-cljs watch app test",
+    "test": "shadow-cljs compile wtr && wtr out/wtr/**/*-test.js --debug --node-resolve --puppeteer"
+  },
+  "devDependencies": {
+    "@web/test-runner": "^0.20.2",
+    "@web/test-runner-playwright": "^0.11.1",
+    "@web/test-runner-puppeteer": "^0.18.0",
+    "shadow-cljs": "^3.1.7"
+  }
+}

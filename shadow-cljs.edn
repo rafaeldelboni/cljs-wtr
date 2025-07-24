@@ -1,0 +1,17 @@
+{:source-paths ["src" "test"]
+ :dev-http {5000 "public"
+            5001 "out/test"}
+ :builds {:app {:target :browser
+                :modules {:main {:init-fn cljs-wtr.app.core/init}}}
+          :test {:target    :browser-test
+                 :test-dir  "out/test"
+                 :ns-regexp "-test$"}
+          :wtr {:target :esm-files
+                :output-dir "out/wtr"
+                :js-options {:js-provider :import}
+                :ns-regexp "-test$"}
+          :wtr2 {:target :esm
+                 :modules {:main {:init-fn cljs-wtr.app.wtr/main}}
+                 :output-dir "out/wtr2"
+                 :js-options {:js-provider :import}
+                 :ns-regexp  "-test$"}}}
