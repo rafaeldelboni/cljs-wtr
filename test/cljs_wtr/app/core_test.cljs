@@ -9,6 +9,7 @@
 (deftest dummy-async-test
   (async done
     (-> (new js/Promise
+          ;; not working should be #(resolve true)
           (fn [resolve] (js/setTimeout (resolve true) 100)))
         (.then (fn [result]
                  (is (= true result))
