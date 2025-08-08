@@ -11,7 +11,8 @@
   },
   "scripts": {
     "watch": "shadow-cljs watch app test",
-    "test": "shadow-cljs compile wtr && wtr out/wtr/**/*-test.js --debug --node-resolve --puppeteer"
+    "test": "shadow-cljs compile wtr && wtr out/wtr/**/*-test.js",
+    "test2": "shadow-cljs compile wtr2 && wtr out/wtr2/main.js"
   },
   "devDependencies": {
     "@web/test-runner": "^0.20.2",

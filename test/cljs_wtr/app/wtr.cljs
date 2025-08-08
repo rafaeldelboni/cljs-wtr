@@ -8,11 +8,11 @@
    [clojure.test :as test]))
 
 (defmethod test/report [::test/default :end-run-tests] [m]
-  (println :end-run-tests m (test/successful? m))
   (if (test/successful? m)
     (sessionFinished #js {:passed true})
     (sessionFailed #js {:message "Fail"})))
 
 (defn main []
-  (sessionStarted)
-  (test/run-all-tests #".*-test$"))
+  (-> (sessionStarted)
+      (.then (fn [_]
+               (test/run-all-tests #".*-test$")))))
